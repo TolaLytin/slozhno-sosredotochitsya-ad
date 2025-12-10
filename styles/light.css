@@ -1,27 +1,85 @@
+/*
+  Специально для светлой темы при наличии класса.
+  Здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
 .page.theme_light {
-  --cover-image: url(../images/cover-image-light.png);
-  --accent-clr: #ff8dcb;
-  --accent-clr-with-background: #353430;
-  --accent-heading-clr: #ffc2e6;
-  --text-clr: #353430;
-  --button-hover-clr: #32312d66;
-  --decorative-bracket-clr: #353430;
-  --menu-clr: #353430;
-  --rec-decoration-clr: transparent;
-  --heading-clr: #353430;
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+}
+
+.theme_light .header__decorative-element {
+  display: none;
+}
+
+:root .theme_light {
+  --accent-color: #ff8dcb;
+  --background-image: url("../images/cover-image-light.png");
+  --background-color: #fff1f7;
+  --main-title-color: #ffc2e6;
+  --angle-color: #353430;
+  --section-title-color: #353430;
+  --sub-title-color: #353430;
+  --main-text-weight: normal;
+  --main-title-weight: bold;
+  --objects-display: block;
+  --main-text-color: #353430;
+  --button-color: #000028;
+  --button-border-focus: #353430;
+  --button-border-hover: rgba(50, 49, 45, 0.4);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --cover-image: url(../images/cover-image-light.png);
-    --accent-clr: #ff8dcb;
-    --accent-clr-with-background: #353430;
-    --accent-heading-clr: #ffc2e6;
-    --text-clr: #353430;
-    --button-hover-clr: #32312d66;
-    --decorative-bracket-clr: #353430;
-    --menu-clr: #353430;
-    --rec-decoration-clr: transparent;
-    --heading-clr: #353430;
+    --accent-color: #ff8dcb;
+    --background-image: url("../images/cover-image-light.png");
+    --background-color: #fff1f7;
+    --main-title-color: #ffc2e6;
+    --angle-color: #353430;
+    --section-title-color: #353430;
+    --sub-title-color: #353430;
+    --main-text-weight: normal;
+    --main-title-weight: bold;
+    --objects-display: block;
+    --main-text-color: #353430;
+    --button-color: #000028;
+    --button-border-color: #353430;
+    --button-border-focus: #353430;
+    --button-border-hover: rgba(50, 49, 45, 0.4);
   }
+
+  .header__container::before {
+    content: url(../images/angle-right-light.svg);
+  }
+
+  .header__container::after {
+    content: url(../images/angle-left-light.svg);
+  }
+
+  .footer::before {
+    content: url(/images/angle-right-light.svg);
+  }
+
+  .footer::after {
+    content: url(/images/angle-left-light.svg);
+  }
+}
+
+.theme_light .header__container::before {
+  content: url(../images/angle-right-light.svg);
+}
+
+.theme_light .header__container::after {
+  content: url(../images/angle-left-light.svg);
+}
+
+.theme_light .footer::before {
+  content: url(/images/angle-right-light.svg);
+}
+
+.theme_light .footer::after {
+  content: url(/images/angle-left-light.svg);
 }

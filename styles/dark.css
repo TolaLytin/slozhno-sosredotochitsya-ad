@@ -1,29 +1,88 @@
+/*
+  Специально для тёмной темы при наличии класса,
+  здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
 .page.theme_dark {
-  --accent-clr: #ff0070;
-  --accent-clr-with-background: #000028;
-  --accent-heading-clr: #db00ff;
-  --text-clr: #f1b2ce;
-  --button-hover-clr: #ff007066;
-  --heading-clr: #ff0070;
-  --decorative-bracket-clr: #ff0070;
-  --menu-clr: #ff0070;
-  --headers-clr: #ff0070;
-  --rec-decoration-clr: #ff0070;
-  --cover-image: url(../images/cover-image-dark.png);
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+}
+
+.theme_dark .header__decorative-element {
+  display: block;
+}
+
+:root .theme_dark {
+  --background-image: url("../images/cover-image-dark.png");
+  --background-color: #000028;
+  --main-title-color: #db00ff;
+  --accent-color: #ff0070;
+  --section-title-color: #ff0070;
+  --angle-color: #ff0070;
+  --main-text-weight: normal;
+  --sub-title-color: #000028;
+  --main-text-color: #f1b2ce;
+  --main-title-weight: bold;
+  --objects-display: block;
+  --button-color: #ff0070;
+  --button-border-focus: #ff0070;
+  --button-border-hover: rgba(255, 0, 112, 0.4);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-clr: #ff0070;
-    --accent-clr-with-background: #000028;
-    --accent-heading-clr: #db00ff;
-    --text-clr: #f1b2ce;
-    --button-hover-clr: #ff007066;
-    --heading-clr: #ff0070;
-    --decorative-bracket-clr: #ff0070;
-    --menu-clr: #ff0070;
-    --headers-clr: #ff0070;
-    --rec-decoration-clr: #ff0070;
-    --cover-image: url(../images/cover-image-dark.png);
+    --background-image: url("../images/cover-image-dark.png");
+    --background-color: #000028;
+    --main-title-color: #db00ff;
+    --accent-color: #ff0070;
+    --section-title-color: #ff0070;
+    --angle-color: #ff0070;
+    --main-text-weight: normal;
+    --sub-title-color: #000028;
+    --main-text-color: #f1b2ce;
+    --main-title-weight: bold;
+    --objects-display: block;
+    --button-color: #ff0070;
+    --button-border-focus: #ff0070;
+    --button-border-hover: rgba(255, 0, 112, 0.4);
   }
+
+  .header__decorative-element {
+    display: block;
+  }
+
+  .header__container::before {
+    content: url(../images/angle-right.svg);
+  }
+
+  .header__container::after {
+    content: url(../images/angle-left.svg);
+  }
+
+  .footer::before {
+    content: url(/images/angle-right.svg);
+  }
+
+  .footer::after {
+    content: url(/images/angle-left.svg);
+  }
+}
+
+.theme_dark .header__container::before {
+  content: url(../images/angle-right.svg);
+}
+
+.theme_dark .header__container::after {
+  content: url(../images/angle-left.svg);
+}
+
+.theme_dark .footer::before {
+  content: url(/images/angle-right.svg);
+}
+
+.theme_dark .footer::after {
+  content: url(/images/angle-left.svg);
 }

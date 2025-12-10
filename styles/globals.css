@@ -40,3 +40,10 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+<<<<<<< HEAD
+=======
+
+.page {
+  font-family: var(--main-font), sans-serif;
+}
+>>>>>>> 7ab9c50 (Project)
